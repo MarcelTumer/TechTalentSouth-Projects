@@ -1,65 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="{.css">
-    <head>
-        <title>My First WebPage</title>
-    </head>
-    <!-- Pick 5 of my favorite restuarants
-    -->
-    <body>
-        <b>Marcel's</b> Favorite Restaurants
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>Cutesy Cupcake</title>
+</head>
+<body>
 
-       <h2>Welcome to My Favorite Restaurants Site</h2>
-        <p>Hello, these are a few restuarants that I love to order from!</p>
+    
+    <header>
+        <a href="#" id="logo"><img src="http://www.clker.com/cliparts/5/j/r/G/y/p/shopping-cart-icon.svg" height="32" width="fit"></a>
+        <nav>
+            <a href="#" id="menu-icon"></a>
+            <ul>
+                
+                <li><a href="index.html" class="current">Home</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <img src="https://openclipart.org/image/800px/svg_to_png/213239/Search-icon.png" height="32" width="fit">
+            </ul>
+        </nav>
+       
+    </header>
 
-        <table>
-            <thead>
-            <tr>
-                <th>Restaurants</th>
-                <th>Why It's My Favorite</th>
-                <th>Favorite Item</th>
-            </tr>
-            </thead>
-            <tr>
-                <th>Dream Wings</th>
-                <th>I needed to find another restaurant that had great chicken alfredo and Dream Wings had variety.</th>
-                <th>Chicken Alfredo</th>
-            </tr>
-            <tr>
-                <th>Htown Seafood</th>
-                <th>There was a special deal on UberEats.</th>
-                <th>Shrimp Fried Rice and Eggrolls</th>
-            </tr>
-            <tr>
-                <th>Frenchey's Chicken</th>
-                <th>I was looking for another chicken place that was near my campus.</th>
-                <th>Chicken Tenders w/ fries</th>
-            </tr>
-            <tr>
-                <th>Buca Di Beppo</th>
-                <th>This was another restaurant that I came across during my hunt for chicken alfredo.</th>
-                <th>Fettuccine Alfredo</th>
-            </tr>
-            <tr>
-                <th>Soul Food Vegan</th>
-                <th>I was interested in finding restaurants that were more healthy.</th>
-                <th>Cashew Alfredo</th>
-            </tr>
-        </table>
-        <form>
-            <h1>How About You?</h1>
-            <section class="location">
-                <label for="restaurant">What is your favorite restaurant? </label>
-                <input type="text">
-            </section> 
-            <section class="reason">
-                <label for="explanation">Why is it your favorite?</label>
-                <input type="text">
-            </section>
-            <section class="food">
-                <label for="item">What do you order?</label>
-                <input type="text">
-            </section>
-        </form>
-    </body>
+    <h1>Cutesy Cupcake</h1>
+
+
+        <ul>
+        <li><a class="active" href="Home"><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">About</a>
+            <div class="dropdown-content">
+                <a href="#">Owner</a>
+                <a href="#">Mission Statement</a>
+                <a href="#">Company</a>
+            </div>
+        </li>
+        </ul>
+
+        <div>
+
+        <p>Welcome to Cutesy Cupcakes!</p>
+        <p>We are a new business that is determined to bring any of your ideas to life, through cupcakes!</p>
+        <p>Our goals are to:</p>
+        <ol>
+            <li>Inspire others</li><br>
+            <li>Create the best cupcakes!</li><br>
+        </ol>
+
+        </div>
+</body>
+<div>
+<footer>
+    <ul>
+                
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <form>
+        <input type="email" name="email">
+    </form>
+</footer>
+</div>
 </html>
