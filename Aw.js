@@ -1,0 +1,21 @@
+async function getRandomNumber () {
+    let promise = new Promise ((resolve, reject) => {
+        setTimeout(() => resolve(Math.Floor(Math.random() * 55)) , 500)
+    });
+    let result = await promise;
+    console.log(result);
+}
+
+getRandomNumber();
+
+async function cityName(city) {
+ fetch (`https://geocode.xyz/${city}?json=1`)  
+  .then(response => response.json())
+  .then(result => {
+    console.log(result);
+    console.log(`the the latitude of ${city} is ${result.latt}`);
+    console.log(`the longitude ${city} is ${result.longt}`);
+  })
+  .catch(error => console.log('error', error));
+}
+ cityName('Houston')
