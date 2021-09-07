@@ -1,0 +1,32 @@
+// Adjacent elements can’t be rendered like this in React 
+// because each of them gets translated into a function call when JSX gets converted. You have a few options to deal with this issue.
+
+// First, you can pass an array of elements to ReactDOM.render and insert into that array as many React elements as you wish.
+ReactDOM.render([<Button />, <Display />], mountNode);
+
+// Another option is to make the sibling React elements the children of another React element. For example, we can just enclose them in a div element.
+ReactDOM.render(
+  <div>
+    <Button />
+    <Display />
+  </div>,
+  mountNode
+);
+
+// React has a special object if you need to enclose multiple adjacent elements like this without introducing a new DOM parent node. You can use React.Fragment:
+ReactDOM.render(
+  <React.Fragment>
+    <Button />
+    <Display />
+  </React.Fragment>,
+  mountNode
+);
+
+// Another option
+ReactDOM.render(
+  <>
+    <Button />
+    <Display />
+  </>,
+  mountNode
+);
