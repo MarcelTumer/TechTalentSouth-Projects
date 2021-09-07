@@ -1,0 +1,71 @@
+// Since this new parent component will host a Display with a Button that increments the displayed count, we can think of it as the count value manager
+
+const CountManager = () => {
+  return (
+    <>
+      <Button />
+      <Display />
+    </>
+  );
+};
+
+ReactDOM.render(<CountManager />, mountNode);
+
+// Since we’re going to display the count’s value in the new Display component, 
+// we no longer need to show the count’s value as the label of the button. Instead, we can change the label to something like "+1"
+
+const Button = () => {
+  return (
+    <button onClick={() => console.log('TODO: Increment counter')}>
+      +1
+    </button>
+  );
+};
+
+// we can now "flow" data from parent to child using component props
+
+const Display = ({ content }) => (
+  <pre>{content}</pre>
+);
+
+const CountManager = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <Button />
+      <Display content={count} />
+    </>
+  );
+};
+
+ReactDOM.render(<CountManager />, mountNode);
+
+// full code
+// bx 8
+const Button = ({ clickAction }) => {
+  return (
+    <button onClick={clickAction}>
+      +1
+    </button>
+  );
+};
+
+const Display = ({ content }) => (
+  <pre>{content}</pre>
+);
+
+const CountManager = () => {
+  const [count, setCount] = useState(0);
+
+  const incrementCounter = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <Button clickAction={incrementCounter} />
+      <Display content={count} />
+    </div>
+  );
+};
