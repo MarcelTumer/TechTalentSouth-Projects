@@ -1,0 +1,97 @@
+// Creating components using functions
+// Bx1
+function Button (props) {
+  // Returns a DOM/React element here. For example:
+  return <button type="submit">{props.label}</button>;
+}
+
+// To render a Button element in the browser
+ReactDOM.render(<Button label="Save" />, mountNode);
+
+// Bx2
+function Button (props) {
+  return React.createElement(
+    "button",
+    { type: "submit" },
+    props.label
+  );
+}
+
+ReactDOM.render(
+  React.createElement(Button, { label: "Save"}),
+  mountNode
+);
+
+// Bx3
+// Wrong:
+function button () {
+  return <div>My Fancy Button</div>;
+};
+
+// The following will render an HTML button
+// (and ignore the fancy button function)
+ReactDOM.render(<button />, mountNode);
+
+// Bx4
+// Expressions in JSX
+const RandomValue = () => (
+  <div>
+    { Math.floor(Math.random() * 100) }
+  </div>
+);
+
+ReactDOM.render(<RandomValue />, mountNode);
+
+// Bx5
+const ErrorDisplay = ({ message }) => (
+  <div style={ { color:'red', backgroundColor:'yellow' } }>
+    {message}
+  </div>
+);
+
+ReactDOM.render(
+  <ErrorDisplay
+    message="These aren't the droids you're looking for"
+  />,
+  mountNode
+);
+
+// Bx6
+class ConditionalStyle extends React.Component {
+  render() {
+    return (
+      <div style={{ color: Math.random() < 0.5 ? 'green': 'red' }}>
+        How do you like this?
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <ConditionalStyle />,
+  mountNode,
+);
+
+// Creating components using classes
+// bx7
+class Button extends React.Component {
+  render() {
+    return (
+      <button>{this.props.label}</button>
+    );
+  }
+}
+
+// Use it (same syntax)
+ReactDOM.render(<Button label="Save" />, mountNode);
+
+// Hooks
+const Button = () => {
+  let count = 0;
+
+  return (
+    <button>{count}</button>
+  );
+};
+
+ReactDOM.render(<Button />, mountNode);
